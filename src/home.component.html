@@ -1,0 +1,52 @@
+<ActionBar title="NativeScript 🍕 Delivery" iosLargeTitle="true"> </ActionBar>
+
+<GridLayout rows="auto,*" class="p-4">
+  <GridLayout class="w-full h-[250]">
+    <Image
+      [src]="
+        orderInProgress()
+          ? 'sys://car.side.arrowtriangle.up.fill'
+          : orderTime() === 0
+          ? 'sys://car.side.rear.open'
+          : 'sys://face.smiling.inverse'
+      "
+      [tintColor]="
+        orderInProgress() ? 'green' : orderTime() === 0 ? 'gray' : 'blue'
+      "
+      [iosSymbolEffect]="orderInProgress() ? symbolEffect : 'none'"
+      iosSymbolScale="large"
+      class="text-8xl"
+      nsRouterLink="/detail/1"
+    ></Image>
+  </GridLayout>
+  <GridLayout row="1" rows="auto,auto,auto,*,auto" class="mt-4">
+    <Button
+      text="Order Now"
+      class="rounded-full bg-green-400 p-2 text-white w-[200] text-xl"
+      (tap)="orderNow()"
+      [isEnabled]="!orderInProgress()"
+    ></Button>
+    <MenuButton
+      row="1"
+      text="Change Order"
+      [options]="driverOptions"
+      (selected)="changeOrder($event)"
+      class="rounded-full bg-orange-400 p-2 text-white mt-4 w-[200] text-xl"
+      [isEnabled]="orderInProgress()"
+    ></MenuButton>
+    <MenuButton
+      row="2"
+      text="Order Delivered"
+      (tap)="orderDelivered()"
+      class="rounded-full bg-blue-500 p-2 text-white mt-4 w-[200] text-xl"
+      [isEnabled]="orderInProgress()"
+    ></MenuButton>
+    <Button
+      row="4"
+      text="Cancel Order"
+      class="rounded-full bg-red-500 p-2 text-white mb-4 w-[200] text-xl"
+      (tap)="cancelOrder()"
+      [isEnabled]="orderInProgress()"
+    ></Button>
+  </GridLayout>
+</GridLayout>

@@ -1,0 +1,35 @@
+{
+  "name": "ns-ios-live-activity",
+  "main": "./src/main.ts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "patch-package"
+  },
+  "dependencies": {
+    "@angular/animations": "~19.1.0",
+    "@angular/common": "~19.1.0",
+    "@angular/compiler": "~19.1.0",
+    "@angular/core": "~19.1.0",
+    "@angular/forms": "~19.1.0",
+    "@angular/platform-browser": "~19.1.0",
+    "@angular/platform-browser-dynamic": "~19.1.0",
+    "@angular/router": "~19.1.0",
+    "@nativescript/angular": "^19.0.0",
+    "@nativescript/core": "next",
+    "rxjs": "~7.8.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~19.1.0",
+    "@angular/compiler-cli": "~19.1.0",
+    "@nativescript/ios": "8.9.0-next.2025-01-19-12850292600",
+    "@nativescript/tailwind": "rc",
+    "@nativescript/types": "~8.8.0",
+    "@nativescript/webpack": "~5.0.0",
+    "@ngtools/webpack": "~19.1.0",
+    "patch-package": "^8.0.0",
+    "tailwindcss": "~4.0.0",
+    "typescript": "~5.7.0"
+  }
+}
